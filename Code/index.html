@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content='text/html; charset=utf-8' http-equiv='content-type' />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no,maximum-scale=1,minimum-scale=1">
+		<meta content='ColorBucket' name='title' />
+    	<meta content='ColorBucket' name='og:title' />
+    	<title>ColorBucket • save the colors that you ♥</title>
+    	<meta name="description" content="ColorBucket • save the colors that you ♥">
+
+		<link href="content/images/ColorBucket.ico" rel="shortcut icon" type="image/x-icon">
+
+		<link rel="canonical" href="ColorBucket.github.io">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="ColorBucket - save the colors that you ♥">
+		<meta property="og:description" content="Never lose that nice color again">
+		<meta property="og:url" content="ColorBucket.github.io">
+		<meta property="og:site_name" content="ColorBucket">
+		<meta property="og:image" content="content/images/bucket.png">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" href="content/images/bucket.png">
+        <link rel="apple-touch-icon" href="content/images/bucket.png">
+        <link rel="apple-touch-startup-image" href="content/images/bucket.png">
+
+	    <link rel="stylesheet" href="content/styles/style.css" />
+	</head>
+	<body>
+		<form onsubmit="return saveColor()">
+			<header>
+				<img src="content/images/logo.png" alt="ColorBucket" title="ColorBucket">
+				<input type="text" id="inputColor" onkeyup="checkColorLength()" onblur="saveColor();" placeholder=" Type your hex to add #ffffff">
+			</header>
+			<section id="colors">
+
+			</section>
+		</form>
+	    <script src='scripts/main.js' type='text/javascript'></script>
+	</body>
+</html>

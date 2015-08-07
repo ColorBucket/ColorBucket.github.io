@@ -1,0 +1,72 @@
+html, body{margin: 0; padding: 0; background:#fafafa }
+
+*{text-align: center; font-family: 'Open Sans', sans-serif;}
+
+header{
+	background: #fafafa;
+	overflow: hidden;
+	padding: 22px 5px;
+	vertical-align: middle;
+}
+header input[type='text']{
+	float: right;
+	padding: 0.8em 0.5em;
+    background: #fcfcfc;
+    border: 2px solid;
+    color: #b5b5b5;
+    font-size: 16px;
+    margin: 0 15px 0 0;
+    font-family: Calibri;
+    font-weight: 400;
+    width: 30%;
+    display: inline-block;
+}
+header img {
+	max-width:280px;
+	width: 60%;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+#colors{
+	padding: 0 0 0 0;
+	width: 100%;
+	overflow: hidden;
+}
+#colors h1{
+	font-family: Calibri;
+	font-size: 28px;
+	opacity: .5;
+	padding: 10% 0 0 0;
+}
+#colors .color{
+	float: left;
+	width: 20%;
+	height: 180px;
+	position: relative;
+}
+#colors .color small,
+	#colors .color .remove{
+	color: #fff;
+	font-family: Calibri;
+	font-size: 16px;
+	position: absolute;
+	bottom: 6px;
+	left: 6px;
+	text-shadow: 1px 1px rgba(50,50,50,.5);
+	opacity: .6;
+}
+#colors .color:hover small,
+	#colors .color:hover .remove{
+	opacity: 1;
+	text-shadow: 1px 1px rgba(50,50,50,.9);
+}
+
+#colors .color .remove{
+	cursor: pointer;
+	bottom: auto;
+	left: auto;
+	top: 6px;
+	right: 15px;
+	opacity: 0;
+}
