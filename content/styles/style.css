@@ -73,6 +73,14 @@ header img {
 	opacity: 0;
 }
 
+.fb-share-button{
+	float: left;
+}
+.twitter-share-button {
+    float: left;
+    margin: 0 0 10px 5px;
+}
+
 @media screen and (max-width: 860px){
 	header {
 	    padding: 18px 5px;

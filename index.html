@@ -27,8 +27,27 @@
 	    <link rel="stylesheet" href="content/styles/style.css" />
 	</head>
 	<body>
+		<!-- FB Share button stuff -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=863088863768670";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!-- End of facebook share button stuff -->
+
 		<form onsubmit="return saveColor()">
 			<header>
+				<!-- Social share stuff -->
+				<div class="fb-share-button" data-href="https://colorbucket.github.io/" data-layout="button"></div>
+				<a class="twitter-share-button"
+				  href="https://twitter.com/intent/tweet?text=ColorBucket%20%E2%80%A2%20save%20the%20colors%20that%20you%20%E2%99%A5%20--%20https%3A%2F%2Fcolorbucket.github.io%2F"
+				  data-size="small" data-count="none">
+				Tweet</a>
+				<!-- End of Social share stuff -->
+
 				<img src="content/images/logo.png" alt="ColorBucket" title="ColorBucket">
 				<input type="text" id="inputColor" onkeyup="checkColorLength()" onblur="saveColor();" placeholder=" Type your hex to add #ffffff">
 			</header>
@@ -37,5 +56,24 @@
 			</section>
 		</form>
 	    <script src='scripts/main.js' type='text/javascript'></script>
+
+		<!-- Twitter Share button stuff -->
+		<script>window.twttr = (function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0],
+		    t = window.twttr || {};
+		  if (d.getElementById(id)) return t;
+		  js = d.createElement(s);
+		  js.id = id;
+		  js.src = "https://platform.twitter.com/widgets.js";
+		  fjs.parentNode.insertBefore(js, fjs);
+
+		  t._e = [];
+		  t.ready = function(f) {
+		    t._e.push(f);
+		  };
+
+		  return t;
+		}(document, "script", "twitter-wjs"));</script>
+		<!-- End of Twitter Share button stuff -->
 	</body>
 </html>
