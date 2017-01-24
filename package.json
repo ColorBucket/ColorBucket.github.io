@@ -1,0 +1,27 @@
+{
+  "name": "colorbucket",
+  "version": "1.0.0",
+  "description": "save the colors that you ♥",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ColorBucket/ColorBucket.github.io.git"
+  },
+  "keywords": [
+    "colorbucket",
+    "javascript",
+    "pwa"
+  ],
+  "author": "Gabriel Age <0800.grc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ColorBucket/ColorBucket.github.io/issues"
+  },
+  "homepage": "https://colorbucket.github.io/",
+  "devDependencies": {
+    "express": "4.14.0"
+  }
+}
