@@ -38,9 +38,10 @@ function saveColor(){
 }
 
 function removeColor(color){
-		localStorage.colors = localStorage.colors.replace(new RegExp(color+';', 'g'), '');
-		localStorage.colors = localStorage.colors.replace(new RegExp(color, 'g'), '');
-		renderColors();
+	localStorage.colors = localStorage.colors.replace(new RegExp(';'+color, 'g'), '');
+	localStorage.colors = localStorage.colors.replace(new RegExp(color+';', 'g'), '');
+	localStorage.colors = localStorage.colors.replace(new RegExp(color, 'g'), '');
+	renderColors();
 }
 
 function checkColorLength(){
