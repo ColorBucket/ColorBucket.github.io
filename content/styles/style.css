@@ -103,4 +103,10 @@ header img {
 	    height: 180px;
 	    position: relative;
 	}
+
+	#colors .color small,
+		#colors .color .remove{
+		opacity: .6;
+		text-shadow: 1px 1px rgba(50,50,50,.9);
+	}
 }
