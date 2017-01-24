@@ -1,6 +1,6 @@
 
 var APP_PREFIX = 'offline-v';
-var VERSION = '1.0.0';
+var VERSION = '1.0.1';
 var CACHE_NAME = APP_PREFIX + VERSION
 var files = ['/',
              '/index.html',
