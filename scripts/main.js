@@ -55,3 +55,9 @@ function emptyColorsMessage(){
 
 	document.getElementById('colors').appendChild(emptyMessage);
 }
+
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/serviceworker.js', {
+    scope: '/'
+  });
+}
