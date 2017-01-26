@@ -1,5 +1,11 @@
-# ColorBucket
+<h1 align="center" style="border:none;">
+<a href="https://colorbucket.github.io/">ColorBucket</a>
+</h1>
+
+<p align="center">
 Remember that color that you've loved? No? So the next time you meet save her on your ColorBucket.
+</p>
+
 
 <h2>How it works?</h2>
 <p>When you find a color that you love just grab it's HEX and save into your ColorBucket, simple as that, no mustard:</p>
