@@ -21,6 +21,10 @@
     "url": "https://github.com/ColorBucket/ColorBucket.github.io/issues"
   },
   "homepage": "https://colorbucket.github.io/",
+  "dependencies": {
+    "requirejs": "2.3.2",
+    "dexie":"1.5.1"
+  },
   "devDependencies": {
     "express": "4.14.0"
   }

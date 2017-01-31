@@ -1,13 +1,15 @@
 
+'use strict';
+
 localStorage.colors = localStorage.colors || ""
 
 function renderColors(){
 	var colors = localStorage.colors.split(";");
 
 	document.getElementById('colors').innerHTML = "";
-	for(i=0;i<colors.length;i++){
-		hexColor = colors[i];
-		color = document.createElement('div');
+	for(let i=0;i<colors.length;i++){
+		let hexColor = colors[i];
+		let color = document.createElement('div');
 		color.setAttribute('id',hexColor);
 		color.setAttribute('class',"color");
 		color.setAttribute('style',"background-color:#"+hexColor);
@@ -24,7 +26,7 @@ function renderColors(){
 renderColors();
 
 function saveColor(){
-	color = document.getElementById("inputColor").value;
+	let color = document.getElementById("inputColor").value;
 	color = color.replace('#','');
 
 	if(/^[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test(color)){
