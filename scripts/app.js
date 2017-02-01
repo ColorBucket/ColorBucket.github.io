@@ -2,7 +2,10 @@ requirejs.config({
     baseUrl: './',
     paths: {
     	"scripts": "./scripts",
-    	"dexie": "./node_modules/dexie/dist/dexie.min"
+    	"services": "./scripts/services",
+    	"contexts": "./scripts/contexts",
+    	"models": "./scripts/models",
+    	"dexie": "./bower_components/dexie/dist/dexie.min"
     }
 });
 

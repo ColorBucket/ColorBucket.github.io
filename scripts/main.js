@@ -1,66 +1,71 @@
 
-'use strict';
+define(function (require) {
+    'use strict';
 
-localStorage.colors = localStorage.colors || ""
+    const _colorService = require('services/color.service');
+    const _colorModel = require('models/color.model');
 
-function renderColors(){
-	var colors = localStorage.colors.split(";");
+	localStorage.colors = localStorage.colors || ""
 
-	document.getElementById('colors').innerHTML = "";
-	for(let i=0;i<colors.length;i++){
-		let hexColor = colors[i];
-		let color = document.createElement('div');
-		color.setAttribute('id',hexColor);
-		color.setAttribute('class',"color");
-		color.setAttribute('style',"background-color:#"+hexColor);
+	function renderColors(){
+		var colors = localStorage.colors.split(";");
 
-		color.innerHTML = "<small>#"+hexColor+"</small>"
-		color.innerHTML += '<span class="remove" onclick="removeColor('+"'"+hexColor+"'"+')">x</span>';
+		document.getElementById('colors').innerHTML = "";
+		for(let i=0;i<colors.length;i++){
+			let hexColor = colors[i];
+			let color = document.createElement('div');
+			color.setAttribute('id',hexColor);
+			color.setAttribute('class',"color");
+			color.setAttribute('style',"background-color:#"+hexColor);
 
-		if(hexColor != "")
-			document.getElementById('colors').appendChild(color);
-		else
-			emptyColorsMessage();
+			color.innerHTML = "<small>#"+hexColor+"</small>"
+			color.innerHTML += '<span class="remove" onclick="removeColor('+"'"+hexColor+"'"+')">x</span>';
+
+			if(hexColor != "")
+				document.getElementById('colors').appendChild(color);
+			else
+				emptyColorsMessage();
+		}
 	}
-}
-renderColors();
+	renderColors();
 
-function saveColor(){
-	let color = document.getElementById("inputColor").value;
-	color = color.replace('#','');
+	function saveColor(){
+		let color = document.getElementById("inputColor").value;
+		color = color.replace('#','');
 
-	if(/^[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test(color)){
-		if(localStorage.colors !== "") localStorage.colors = localStorage.colors + ";";
-		localStorage.colors += color;
-		document.getElementById("inputColor").value = "";
+		if(/^[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test(color)){
+			if(localStorage.colors !== "") localStorage.colors = localStorage.colors + ";";
+			localStorage.colors += color;
+			document.getElementById("inputColor").value = "";
+			renderColors();
+		}
+
+		return false;
+	}
+
+	function removeColor(color){
+		localStorage.colors = localStorage.colors.replace(new RegExp(';'+color, 'g'), '');
+		localStorage.colors = localStorage.colors.replace(new RegExp(color+';', 'g'), '');
+		localStorage.colors = localStorage.colors.replace(new RegExp(color, 'g'), '');
 		renderColors();
 	}
 
-	return false;
-}
+	function checkColorLength(){
+			if(document.getElementById('inputColor').value.replace('#','').length > 6)
+				document.getElementById('inputColor').value = document.getElementById('inputColor').value.replace('#','').substr(0,6);
+	}
 
-function removeColor(color){
-	localStorage.colors = localStorage.colors.replace(new RegExp(';'+color, 'g'), '');
-	localStorage.colors = localStorage.colors.replace(new RegExp(color+';', 'g'), '');
-	localStorage.colors = localStorage.colors.replace(new RegExp(color, 'g'), '');
-	renderColors();
-}
+	function emptyColorsMessage(){
+		emptyMessage = document.createElement('h1');
 
-function checkColorLength(){
-		if(document.getElementById('inputColor').value.replace('#','').length > 6)
-			document.getElementById('inputColor').value = document.getElementById('inputColor').value.replace('#','').substr(0,6);
-}
+		emptyMessage.innerHTML = "save the colors that you ♥ so you'll never lose that nice color again"
 
-function emptyColorsMessage(){
-	emptyMessage = document.createElement('h1');
+		document.getElementById('colors').appendChild(emptyMessage);
+	}
 
-	emptyMessage.innerHTML = "save the colors that you ♥ so you'll never lose that nice color again"
-
-	document.getElementById('colors').appendChild(emptyMessage);
-}
-
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/serviceworker.js', {
-    scope: '/'
-  });
-}
+	if('serviceWorker' in navigator) {
+	  navigator.serviceWorker.register('/serviceworker.js', {
+	    scope: '/'
+	  });
+	}
+});
