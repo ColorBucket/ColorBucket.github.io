@@ -1,10 +1,16 @@
 
 var APP_PREFIX = 'offline-v';
-var VERSION = '1.0.1';
+var VERSION = '1.0.2';
 var CACHE_NAME = APP_PREFIX + VERSION
 var files = ['/',
              '/index.html',
              '/scripts/main.js',
+             '/scripts/app.js',
+             '/scripts/services/color.service.js',
+             '/scripts/models/color.model.js',
+             '/scripts/contexts/dexie.context.js',
+             '/vendors/require.js',
+             '/vendors/dexie.min.js',
              '/content/images/logo.png',
              '/content/images/icon.png',
              '/content/images/ColorBucket.ico',

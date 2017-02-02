@@ -30,7 +30,18 @@ define(function (require) {
 	}
 
 	function remove(params) {
-		return ctx.where(params).delete();
+		return ctx.where('_id').notEqual(-1)
+				.and(function(o){
+					let absoluteTrue = true;
+					
+					for (prop in params) {
+					    if (params.hasOwnProperty(prop)) {
+					        absoluteTrue = params[prop] === o[prop] && absoluteTrue;
+					    }
+					}
+
+					return absoluteTrue;
+				}).delete();
 	}
 	
 	const service = {
