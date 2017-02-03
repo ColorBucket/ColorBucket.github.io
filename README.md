@@ -15,6 +15,16 @@ Remember that color that you've loved? No? So the next time you meet save her on
 <p>When you need that lovely color again you can easily find it at your ColorBucket:</p>
 <img src="https://raw.githubusercontent.com/ColorBucket/ColorBucket.github.io/master/Art/demogif2.gif" title="ColorBucket demo gif - Using"/>
 <br/>
+<h2>Running project</h2>
+<p>Just run:</p>
+<p>npm install</p>
+<p>npm start</p>
+<br/>
+<h2>Running tests</h2>
+<p>Just run:</p>
+<p>npm install phantomjs -g</p>
+<p>npm install casperjs -g</p>
+<p>npm run test</p>
 <br/>
 <br/>
 > <small>*Made with ❤️ by <a href="https://github.com/Agezao">Gabriel "Age"</a>*</small>

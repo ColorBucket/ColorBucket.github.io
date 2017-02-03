@@ -4,6 +4,7 @@
   "description": "save the colors that you ♥",
   "main": "server.js",
   "scripts": {
+    "test": "casperjs test tests/main.js",
     "build": "npm install && bower install",
     "start": "node server.js"
   },
