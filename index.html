@@ -28,9 +28,17 @@
 	</head>
 	<body>
 		<form onsubmit="return saveColor()">
-			<header>
+			<header open>
+				<div class="burger"><div class="burger__patty"></div><div class="burger__patty"></div><div class="burger__patty"></div></div>
 				<img src="content/images/logo.png" alt="ColorBucket" title="ColorBucket">
 				<input type="text" id="inputColor" onkeyup="checkColorLength()" onblur="saveColor();" placeholder=" Type your hex to add #ffffff">
+
+				<div id="hidden-menu">
+					<ul>
+						<li><a href="/">my colors</a></li>
+						<li><a href="https://github.com/colorbucket">github</a></li>
+					</ul>
+				</div>
 			</header>
 			<section id="colors">
 

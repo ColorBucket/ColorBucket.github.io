@@ -70,6 +70,16 @@ define(function (require) {
 		document.getElementById('colors').appendChild(emptyMessage);
 	}
 
+	function bindEvents() {
+		//header[open]
+		document.getElementsByClassName('burger')[0].addEventListener('click', function() {
+			if(document.getElementsByTagName('header')[0].hasAttribute("open"))
+				document.getElementsByTagName('header')[0].removeAttribute("open");
+			else
+				document.getElementsByTagName('header')[0].setAttribute("open", "");
+		});
+	}
+
 	if('serviceWorker' in navigator) {
 	  navigator.serviceWorker.register('/serviceworker.js', {
 	    scope: '/'
@@ -83,4 +93,5 @@ define(function (require) {
 
 	//Starting app
 	renderColors();
+	bindEvents();
 });
