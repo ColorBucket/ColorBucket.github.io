@@ -34,8 +34,8 @@ header img {
 header .burger {
 	position: absolute;
 	z-index: 999;
-	left: 30px;
-	top: 39px;
+	left: 20px;
+	top: 30px;
 	cursor: pointer;
 	transform: rotateY(0);
 	transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
