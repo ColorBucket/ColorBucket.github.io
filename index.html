@@ -26,6 +26,12 @@
         <link rel="manifest" href="/manifest.json">
 
 	    <link rel="stylesheet" href="content/styles/style.css" />
+
+	    <script type="text/javascript">
+	    	// Secure assert redirect
+	    	if(window.location.protocol.indexOf('s') < 0)
+	    		window.location = window.location.href.replace('http', 'https');
+	    </script>
 	</head>
 	<body>
 		<form onsubmit="return saveColor()">
