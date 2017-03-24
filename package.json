@@ -1,6 +1,6 @@
 {
   "name": "colorbucket",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "save the colors that you ♥",
   "main": "server.js",
   "scripts": {
