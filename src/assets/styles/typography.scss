@@ -1,0 +1,52 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", sans-serif;
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+
+* {
+	font-family: "Open Sans", sans-serif;
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	font-size: 0.85rem;
+	 
+	&:before {
+		font-size: 1.20rem;
+	}
+
+	&.lg {
+      font-size: 1.15rem;
+
+      &:before {
+        font-size: 1.55rem;
+      }
+    }
+    &.sm {
+      font-size: 0.65rem;
+
+      &:before {
+        font-size: 1.075rem;
+      }
+    }
+    &.tag {
+      font-size: 0.55rem;
+
+      &:before {
+        font-size: 0.95rem;
+      }
+    }
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+
+	&:hover {
+		color: $primary-color;
+	}
+}
