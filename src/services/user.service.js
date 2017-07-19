@@ -3,7 +3,7 @@
 import HttpHandler from './handlers/http.handler';
 
 function get() {
-	return HttpHandler.request('/user', 'GET', null);
+	return HttpHandler.request('/users', 'GET', null);
 }
 
 function local() {
@@ -11,7 +11,7 @@ function local() {
 }
 
 function save(model) {
-	return HttpHandler.request('/user', 'PUT', model);
+	return HttpHandler.request('/users', 'PUT', model);
 }
 
 export default { get, save, local };

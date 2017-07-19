@@ -6,7 +6,8 @@ class Signup extends Component {
 	state = {
 		email: '',
 		password: '',
-		name: ''
+		name: '',
+		username: ''
 	};
 
 	_confirm = async(e) => {
@@ -15,7 +16,7 @@ class Signup extends Component {
 		if(!this.state.email || !this.state.password || !this.state.name)
 			return alert('Dados inválidos!');
 
-		AuthService.signup({name: this.state.name, email: this.state.email, password: this.state.password})
+		AuthService.signup(this.state)
 			.then((response) => {
 				if(!response.success)
 					return alert(response.data.message);
@@ -44,6 +45,10 @@ class Signup extends Component {
 							<div className="col-6 col-offset-3">
 								<label>Your Name</label>
 								<input className="full-width" onChange={(e) => this._handleChange(e)} type="text" placeholder="Name" id="name" />
+							</div>
+							<div className="col-6 col-offset-3">
+								<label>Your Username</label>
+								<input className="full-width" onChange={(e) => this._handleChange(e)} type="text" placeholder="@username" id="username" />
 							</div>
 							<div className="col-6 col-offset-3">
 								<label>Your email</label>

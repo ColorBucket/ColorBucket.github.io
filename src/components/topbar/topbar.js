@@ -15,7 +15,7 @@ class Topbar extends Component {
 
 	_toggleResponsive = () => {
 		this.state.menuOpened = !this.state.menuOpened;
-	    this.setState(this.state);
+    this.setState(this.state);
 	};
 
 	_toggleSearch = (e) => {
@@ -31,49 +31,35 @@ class Topbar extends Component {
 	render() {
 		return (
 			<header>
-		        <div className="col-3 main-nav">
-		          <span className="ion-navicon" onClick={this._toggleResponsive}></span>
-		        </div>
-		        <div className="col-6 center-text logo">
-		          <Link to='/' className="navbar-brand">WelcomeApp</Link>
-		        </div>
-		        <div className="col-3 context-menu">
-		        	{/* Search */}
-		        	<div>
-			          <span onClick={this._toggleSearch} className="ion-ios-search"></span>
+        <div className="col-12 logo">
+          <div className={this.state.menuOpened ? "burger open" : "burger"} onClick={this._toggleResponsive}>
+          	<div className="burger__patty"></div><div className="burger__patty"></div><div className="burger__patty"></div>
+        	</div>
 
-			          <form className={this.state.searchOpened ? "full-search active" : "full-search"} onSubmit={this._search}>
-			            <button type="submit" className="btn search-button"><i className="fa fa-search"></i></button>
-			            <input type="text" id="searchInput" className="lg clear" placeholder="search" ref="search"/>
+          <Link to='/' className="navbar-brand"><img src="/images/logo.png" /></Link>
 
-			            <span onClick={this._toggleSearch} className="close-btn ion-close-round center-text" data-dismiss="sucessModal">close</span>
-			          </form>
-			        </div>
-
-				    {/* Menu */}
-					<div className={this.state.menuOpened ? "hiddenMenu full active" : "hiddenMenu full"}>
-						<small className="title" onClick={this._toggleResponsive}>x close</small>
+        	{/* Menu */}
+					<div className={this.state.menuOpened ? "hiddenMenu active" : "hiddenMenu"}>
 						<ul>
-							<li className="title">App</li>
 							<li onClick={this._toggleResponsive}>
 								<Link to="/" className="ion-ios-home-outline">Home</Link>
 							</li>
 							<li onClick={this._toggleResponsive}>
 								<Link to="/about" className="ion-ios-help-outline">About</Link>
 							</li>
-
-							<li className="title pd-10 pd-cl-h pd-cl-b">You</li>
-								<li onClick={this._toggleResponsive}>
-								<Link to="/profile" className="ion-ios-person">My Info</Link>
+							<li onClick={this._toggleResponsive}>
+								<Link to="/profile" className="ion-ios-person">My Profile</Link>
 							</li>
-
+							<li onClick={this._toggleResponsive}>
+								<a href="https://github.com/ColorBucket/" target="_blank" className="ion-social-github">Github</a>
+							</li>
 							<li>
 								<a href="" className="ion-log-out" onClick={this._logout} >Logout</a>
 							</li>
 						</ul>
 					</div>
-		        </div>
-	        </header>
+        </div>
+    	</header>
 		)
 	}
 }
