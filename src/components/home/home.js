@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Fab from '../fab/fab';
 //
 
 class Home extends Component {
@@ -6,6 +7,8 @@ class Home extends Component {
     return (
       <div>
         home
+
+        <Fab />
       </div>
     );
   }
