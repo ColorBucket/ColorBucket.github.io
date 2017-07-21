@@ -1,17 +1,24 @@
-'use strict'
-
 import HttpHandler from './handlers/http.handler';
 
-function get() {
-	return HttpHandler.request('/users', 'GET', null);
+const get = (id) => {
+	let route = !id ? '/users' : '/users/' + id;
+
+	return HttpHandler.request(route, 'GET', null);
 }
 
-function local() {
+const local = () => {
 	return JSON.parse(localStorage.user);
 }
 
-function save(model) {
+const save = (model) => {
 	return HttpHandler.request('/users', 'PUT', model);
 }
 
-export default { get, save, local };
+const fetchColors = (id) => {
+	let route = '/users/';
+	route += !id ? 'colors' : id + '/colors';
+
+	return HttpHandler.request(route, 'GET', null);
+};
+
+export default { get, save, local, fetchColors };

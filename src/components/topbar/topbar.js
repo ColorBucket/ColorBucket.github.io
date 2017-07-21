@@ -42,13 +42,13 @@ class Topbar extends Component {
 					<div className={this.state.menuOpened ? "hiddenMenu active" : "hiddenMenu"}>
 						<ul>
 							<li onClick={this._toggleResponsive}>
-								<Link to="/" className="ion-ios-home-outline">Home</Link>
+								<Link to="/" className="ion-ios-home-outline">Your Colors</Link>
+							</li>
+							<li onClick={this._toggleResponsive}>
+								<Link to="/profile" className="ion-ios-person">Your Profile</Link>
 							</li>
 							<li onClick={this._toggleResponsive}>
 								<Link to="/about" className="ion-ios-help-outline">About</Link>
-							</li>
-							<li onClick={this._toggleResponsive}>
-								<Link to="/profile" className="ion-ios-person">My Profile</Link>
 							</li>
 							<li onClick={this._toggleResponsive}>
 								<a href="https://github.com/ColorBucket/" target="_blank" className="ion-social-github">Github</a>

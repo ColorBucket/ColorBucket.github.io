@@ -1,5 +1,3 @@
-'use strict'
-
 import React from 'react';
 const ApiRoute = 'http://localhost:3010/api';
 
@@ -29,14 +27,9 @@ function request(route, method, data) {
 	      return response.json();
 	    })
 	    .then(response => {
-	    	if(response.code == "B101") {
-	    		let repopulateOnboardingData = localStorage.onboarded ? true : false;
-	    		
-	    		localStorage.clear();
-
-	    		if(repopulateOnboardingData)
-	    			localStorage.onboarded = "true";
-
+	    	if(!response.success && response.code === -1 && response.message.toLowerCase() === 'ivalid token') {
+	    		localStorage.removeItem('userToken');
+	    		localStorage.removeItem('user');
 	    		return window.location = "/#/login";
 	    	}
 

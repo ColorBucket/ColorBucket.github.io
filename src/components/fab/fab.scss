@@ -2,6 +2,7 @@
 
 $fab-size: 56px;
 
+
 .fab-container {
   margin: 1em;
   position: fixed;
@@ -102,10 +103,19 @@ $fab-size: 56px;
 			cursor: pointer;
 			padding-bottom: 10px;
 		}
+	}
 
-		@media (max-width: 850px) {
+	@media (max-width: 850px) {
+	  bottom: 0px;
+  	right: 0px;
+
+		.color-add-modal {
+			width: 100%;
+			max-width: 100%;
+			border-radius: 0;
 			bottom: 0;
 			right: 0;
+			box-shadow: none;
 		}
 	}
 }

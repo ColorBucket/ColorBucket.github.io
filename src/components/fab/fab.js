@@ -22,7 +22,7 @@ class Fab extends Component {
 
 				<div className={this.state.tileOpened ? "color-add-modal open" : "color-add-modal"}>
 					<span onClick={() => this._toggleColorAdd()}>x close</span>
-					<ColorAdd />
+					<ColorAdd addCallback={this.props.addCallback} />
 				</div>
 			</div>
 		);

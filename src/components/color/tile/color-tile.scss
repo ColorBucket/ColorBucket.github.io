@@ -1,0 +1,61 @@
+.color-tile {
+	display: inline-block;
+	width: 20%;
+	height: 20vh;
+	max-height: 160px;
+	margin: 0;
+	vertical-align: top;
+	position: relative;
+	overflow: hidden;
+
+	p {
+		opacity: 0;
+		display: inline-block;
+		float: right;
+		cursor: default;
+		text-align: right;
+		font-size: 1.3em;
+		color: #fff;
+		padding: 0;
+		margin: 0;
+		right: 10px;
+    position: relative;
+		transition: all .7s;
+		-webkit-transition: all .7s;
+		text-shadow: .07em .07em rgba(50,50,50,.7);
+	}
+
+	small {
+		font-size: 1.1em;
+		font-weight: 200;
+		letter-spacing: 1px;
+		color: #fff;
+		padding: 0 0 0 10px;
+		position: absolute;
+		bottom: -40px;
+		transition: all .5s;
+		-webkit-transition: all .5s;
+		text-shadow: 1px 1px rgba(50,50,50,.5);
+	}
+
+	&:hover {
+		p {
+			opacity: .3;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		small {
+			bottom: 10px;
+		}
+	}
+
+	@media (max-width: 850px) {
+		width: 50%;
+		height: 28vh;
+		max-height: 500px;
+	}
+}

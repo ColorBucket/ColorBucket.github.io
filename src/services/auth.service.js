@@ -1,12 +1,10 @@
-'use strict'
-
 import HttpHandler from './handlers/http.handler';
 
-function signup(model) {
+const signup = (model) => {
 	return HttpHandler.request('/signup', 'POST', model);
 }
 
-function login(model) {
+const login = (model) => {
 	return HttpHandler.request('/login', 'POST', model);
 }
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 //
-import './color-add.scss';
 import UserService from '../../../services/user.service';
+import ColorService from '../../../services/color.service';
+import './color-add.scss';
 
 class ColorAdd extends Component {
 	state = {
@@ -46,8 +47,12 @@ class ColorAdd extends Component {
 		if(!this.state.validHex || !this.state.hex)
 			return false;
 
-		alert(JSON.stringify(this.state));
-		this.setState({name: '',hex: '',validHex: true});
+		let that = this;
+		ColorService.save(this.state)
+			.then(result => {
+				this.props.addCallback();
+				this.setState({name: '',hex: '',validHex: true});
+			});
 	};
 
 	render() {
@@ -55,7 +60,7 @@ class ColorAdd extends Component {
 			<div className="color-add-input row">
 				<form>
 					<div className="col-12 row">
-						<input type="text" className="full-width center-text" id="name" name="name" placeholder="name this color" onChange={(e) => this._handleChange(e)} value={this.state.name} />
+						<input type="text" className="full-width center-text" id="name" name="name" placeholder="name the color" onChange={(e) => this._handleChange(e)} value={this.state.name} />
 					</div>
 					<div className="col-12 row">
 						<input type="text" className={this.state.validHex ? "full-width center-text ma-cl-b" : "full-width center-text ma-cl-b error-input"} id="hex" name="hex" placeholder="type your hex #000000" onChange={(e) => this._handleChange(e)} value={this.state.hex} />
