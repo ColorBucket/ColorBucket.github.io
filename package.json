@@ -23,6 +23,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "dependencies": {
+    "dexie": "^2.0.0-beta.11",
     "history": "^4.6.3",
     "ionicons": "^2.0.1",
     "promise": "^7.1.1",

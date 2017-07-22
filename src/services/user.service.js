@@ -1,4 +1,5 @@
 import HttpHandler from './handlers/http.handler';
+import LocalHandler from './handlers/local.handler';
 
 const get = (id) => {
 	let route = !id ? '/users' : '/users/' + id;
@@ -7,7 +8,18 @@ const get = (id) => {
 }
 
 const local = () => {
-	return JSON.parse(localStorage.user);
+	if(localStorage.user)
+		return JSON.parse(localStorage.user);
+
+	let newTempUser = {
+		_id: new Date().getTime(),
+		name: '',
+		email: '',
+		about: '',
+		created: new Date()
+	};
+	localStorage.user = JSON.stringify(newTempUser);
+	return newTempUser;
 }
 
 const save = (model) => {
@@ -17,6 +29,9 @@ const save = (model) => {
 const fetchColors = (id) => {
 	let route = '/users/';
 	route += !id ? 'colors' : id + '/colors';
+
+	if(!window.localStorage.userToken && !id)
+		return LocalHandler.fetch('colors', {user: local()._id});
 
 	return HttpHandler.request(route, 'GET', null);
 };

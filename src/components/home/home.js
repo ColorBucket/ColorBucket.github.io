@@ -19,7 +19,8 @@ class Home extends Component {
 		let that = this;
 		UserService.fetchColors()
 			.then(result => {
-				that.setState({colors: result.data});
+				if(result.data)
+					that.setState({colors: result.data});
 			});
 	};
 

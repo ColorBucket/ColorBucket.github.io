@@ -28,7 +28,7 @@ let checkAuth = () => {
 
 ReactDOM.render(
 	<Router history={hashHistory}>
-		<Route onEnter={checkAuth()}>
+		<Route>
 			<Route path="/login" component={LoginApp}>
 				<IndexRoute component={Login}/>
 				<Route path="signup" component={Signup}/>

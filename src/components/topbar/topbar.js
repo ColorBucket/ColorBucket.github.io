@@ -5,11 +5,19 @@ import './topbar.scss';
 class Topbar extends Component {
 	state = {
 		searchOpened: false,
-		menuOpened: false
+		menuOpened: false,
+		auth: false
 	};
 
-	_logout = () => {
-		localStorage.clear();
+	componentDidMount() {
+		if(window.localStorage.userToken)
+			this.setState({auth: true});
+	}
+
+	_logout = (e) => {
+		e.preventDefault();
+		if(this.state.auth)
+			localStorage.clear();
 		hashHistory.push('/login');
 	};
 
@@ -54,7 +62,9 @@ class Topbar extends Component {
 								<a href="https://github.com/ColorBucket/" target="_blank" className="ion-social-github">Github</a>
 							</li>
 							<li>
-								<a href="" className="ion-log-out" onClick={this._logout} >Logout</a>
+								{this.state.auth ? <a href="" className="ion-log-out" onClick={this._logout} >Logout</a>
+								: <a href="" className="ion-log-out" onClick={(e) => this._logout(e)} >Login or Signup</a>
+								}
 							</li>
 						</ul>
 					</div>

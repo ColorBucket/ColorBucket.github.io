@@ -48,7 +48,12 @@ class ColorAdd extends Component {
 			return false;
 
 		let that = this;
-		ColorService.save(this.state)
+		let vm = {
+			user: this.state.user,
+			name: this.state.name,
+			hex: this.state.hex
+		};
+		ColorService.save(vm)
 			.then(result => {
 				this.props.addCallback();
 				this.setState({name: '',hex: '',validHex: true});
