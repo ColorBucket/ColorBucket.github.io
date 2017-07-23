@@ -27,4 +27,7 @@ Remember that color that you've loved? No? So the next time you meet save her on
 <p>npm run test</p>
 <br/>
 <br/>
+<h2>About v2?</h2>
+<p>You can check and contribute to the progress of Colorbucket <a href="https://github.com/ColorBucket/ColorBucket.github.io/tree/development">here</a></p>
+
 > <small>*Made with ❤️ by <a href="https://github.com/Agezao">Gabriel "Age"</a>*</small>
