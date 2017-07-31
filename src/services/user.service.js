@@ -12,7 +12,7 @@ const local = () => {
 		return JSON.parse(localStorage.user);
 
 	let newTempUser = {
-		_id: new Date().getTime(),
+		_id: "temp_" + new Date().getTime(),
 		name: '',
 		email: '',
 		about: '',

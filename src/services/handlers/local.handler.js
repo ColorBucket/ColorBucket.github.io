@@ -9,7 +9,7 @@ localdb.version(1).stores({
 
 //privete
 const generateId = () => {
-	return new Date().getTime();
+	return  "temp_" + new Date().getTime();
 }
 
 const generateApiResponse = (data) => {
@@ -44,6 +44,13 @@ let fetch = (collection, vm) => {
 		});
 }
 
+let fetchTemp = (collection) => {
+	return localdb[collection].where("_id").startsWith("temp_").toArray()
+		.then(response => {
+			return generateApiResponse(response);
+		});
+};
+
 let remove = (collection, id) => {
 	return localdb[collection].delete(id)
 		.then(response => {
@@ -51,4 +58,4 @@ let remove = (collection, id) => {
 		});
 }
 
-export default { save, fetch, remove };
+export default { save, fetch, fetchTemp, remove };

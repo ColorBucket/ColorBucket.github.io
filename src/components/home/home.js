@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Fab from '../fab/fab';
 import ColorTile from '../color/tile/color-tile';
 import UserService from '../../services/user.service';
+import SyncService from '../../services/sync.service';
 import './home.scss';
 
 class Home extends Component {
@@ -12,7 +13,10 @@ class Home extends Component {
 	};
 
 	componentDidMount() {
-		this._fetchUserColors();		
+		this._fetchUserColors();
+		
+		if(window.localStorage.userToken)
+			SyncService.syncColors(this._fetchUserColors);
 	}
 
 	_fetchUserColors = () => {
