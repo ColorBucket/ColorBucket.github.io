@@ -14,9 +14,11 @@ class ColorTile extends Component {
 
 	render() {
 		return (
-			<div className="color-tile" style={{'backgroundColor': '#'+this.props.hex}}>
-				<p className="ion-ios-trash" onClick={() => this._deleteColor()}></p>
-				<small>{ !this.props.name ? '#'+this.props.hex : this.props.name + ' (#' + this.props.hex + ')' }</small>
+			<div className="tile-holder">
+				<div className="color-tile" style={{'backgroundColor': '#'+this.props.hex}}>
+					<p className="ion-ios-trash" onClick={() => this._deleteColor()}></p>
+					<small>{ !this.props.name ? '#'+this.props.hex : this.props.name + ' (#' + this.props.hex + ')' }</small>
+				</div>
 			</div>
 		);
 	}
