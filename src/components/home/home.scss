@@ -13,4 +13,22 @@
 			padding: 30vh 0 0 0;
 		}
 	}
+
+	.home-message {
+    margin: 0;
+    text-align: center;
+    padding: 7px 0 7px 0;
+    font-size: .9em;
+    color: #444;
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    > span {
+    	float: right;
+    	margin: 0 10px 0 0;
+    	text-decoration: underline;
+    	cursor: pointer;
+    }
+	}
 }
