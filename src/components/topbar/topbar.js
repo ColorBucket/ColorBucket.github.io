@@ -50,7 +50,7 @@ class Topbar extends Component {
 					<div className={this.state.menuOpened ? "hiddenMenu active" : "hiddenMenu"}>
 						<ul>
 							<li onClick={this._toggleResponsive}>
-								<Link to="/" className="ion-ios-home-outline">Your Colors</Link>
+								<Link to="/" className="ion-paintbucket">Your Colors</Link>
 							</li>
 							<li onClick={this._toggleResponsive}>
 								<Link to="/profile" className="ion-ios-person">Your Profile</Link>
