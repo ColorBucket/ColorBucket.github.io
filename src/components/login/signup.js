@@ -36,36 +36,37 @@ class Signup extends Component {
 	render() {
 		return (
 			<div className="ma-40 ma-cl-h">
-				<div className="col-12 center-text">
+				<div className="col-12 center-text login-header">
+					<Link to="/" className="bucket-logo"><img src="./images/bucket.png" /></Link>
 					<h3>Signup</h3>
 				</div>
 				<div className="col-12">
 					<form>
 						<div className="row">
-							<div className="col-6 col-offset-3">
+							<div className="col-4 col-offset-4">
 								<label>Your Name</label>
 								<input className="full-width" onChange={(e) => this._handleChange(e)} type="text" placeholder="Name" id="name" />
 							</div>
-							<div className="col-6 col-offset-3">
+							<div className="col-4 col-offset-4">
 								<label>Your Username</label>
 								<input className="full-width" onChange={(e) => this._handleChange(e)} type="text" placeholder="@username" id="username" />
 							</div>
-							<div className="col-6 col-offset-3">
+							<div className="col-4 col-offset-4">
 								<label>Your email</label>
 								<input className="full-width" onChange={(e) => this._handleChange(e)} type="email" placeholder="Email" id="email" />
 							</div>
-							<div className="col-6 col-offset-3">
+							<div className="col-4 col-offset-4">
 								<label>Password</label>
 								<input className="full-width" onChange={(e) => this._handleChange(e)} type="password" placeholder="Password" id="password" />
 							</div>
-							<div className="col-6 col-offset-3 center-text">
-						      	<input type="submit" className="button-primary" onClick={(e) => this._confirm(e)} value="Cadastrar"/>
+							<div className="col-4 col-offset-4 center-text">
+						      	<input type="submit" className="button-primary" onClick={(e) => this._confirm(e)} value="Signup"/>
 							</div>
 						</div>
 					</form>
 				</div>
 				<div className="col-12 center-text login-hit">
-					Já tem conta? <Link to="/login">Login</Link>
+					Have an account? <Link to="/login">Login</Link>
 				</div>
 			</div>
 		);
