@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import Gravatar from 'gravatar-api';
 import UserService from '../../services/user.service';
 //
 
@@ -10,10 +11,17 @@ class Profile extends Component {
 	};
 
 	componentDidMount() {
-		let localUser = UserService.local();
-		this.setState({user: localUser});
-    if(window.localStorage.userToken)
-      this.setState({auth: true});
+    let that = this;
+    UserService.get(this.props.params.user_id)
+      .then((response) => {
+        if(!response.success)
+          return alert(response.message);
+
+        response.data.profileImage = Gravatar.imageUrl({email: response.data.email, parameters: { "size": "200", "d": "mm" },secure: true});
+        this.setState({user: response.data});
+        if(window.localStorage.userToken)
+          this.setState({auth: true});
+      });
 	}
 
   render() {
@@ -30,10 +38,13 @@ class Profile extends Component {
         :
         <div>
         	<div className="col-12 right-text pd-5 pd-cl-h">
-        		<Link to={'/profile/'+this.state.user._id} className="button ion-ios-color-wand-outline button-primary ma-cl-v sm" type="button">update</Link>
+        		<Link to={'/u/edit/'+this.state.user._id} className="button ion-ios-color-wand-outline button-primary ma-cl-v sm" type="button">update</Link>
         	</div>
-          <h5 className="ma-cl-v">{this.state.user.name}</h5>
-          <p>{this.state.user.email}</p>
+          <div className="profile-view center-text">
+            <img src={this.state.user.profileImage} />
+            <h4 className="ma-cl-v">{this.state.user.name}</h4>
+            <p className="ma-5 ma-cl-h">{this.state.user.about}</p>
+          </div>
         </div>
       }
       </div>

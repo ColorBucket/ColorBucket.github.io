@@ -35,8 +35,8 @@ ReactDOM.render(
 			</Route>
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}/>
-				<Route path="profile" component={Profile}/>
-				<Route path="profile/:user_id" component={ProfileEdit}/>
+				<Route path="u/:user_id" component={Profile}/>
+				<Route path="u/edit/:user_id" component={ProfileEdit}/>
 				<Route path="about" component={About}/>
 			</Route>
 		</Route>

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "dexie": "^2.0.0-beta.11",
+    "gravatar-api": "^1.5.0",
     "history": "^4.6.3",
     "ionicons": "^2.0.1",
     "promise": "^7.1.1",
