@@ -29,7 +29,7 @@ class ProfileEdit extends Component {
           alert('Erro ' + response.message);
 
         localStorage.user = JSON.stringify(this.state.user);
-        hashHistory.push('/profile');
+        hashHistory.push('/u/'+this.state.user.username);
       });
   }
 

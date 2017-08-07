@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router';
+import UserService from '../../services/user.service';
 import './topbar.scss';
 
 class Topbar extends Component {
 	state = {
 		searchOpened: false,
 		menuOpened: false,
-		auth: false
+		auth: false,
+		user: null
 	};
 
 	componentDidMount() {
-		if(window.localStorage.userToken)
-			this.setState({auth: true});
+		if(window.localStorage.userToken) {
+			this.setState({auth: true, user: UserService.local()});
+		}
 	}
 
 	_logout = (e) => {
@@ -52,9 +55,11 @@ class Topbar extends Component {
 							<li onClick={this._toggleResponsive}>
 								<Link to="/" className="ion-paintbucket">Your Colors</Link>
 							</li>
-							<li onClick={this._toggleResponsive}>
-								<Link to="/profile" className="ion-ios-person">Your Profile</Link>
-							</li>
+							{ !this.state.auth ? "" :
+								<li onClick={this._toggleResponsive}>
+									<Link to={"/u/"+this.state.user.username} className="ion-ios-person">Your Profile</Link>
+								</li>
+							}
 							<li onClick={this._toggleResponsive}>
 								<Link to="/about" className="ion-ios-help-outline">About</Link>
 							</li>
