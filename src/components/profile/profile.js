@@ -24,7 +24,8 @@ class Profile extends Component {
         if(!response.success)
           return alert(response.message);
 
-        response.data.profileImage = Gravatar.imageUrl({email: response.data.email, parameters: { "size": "200", "d": "mm" },secure: true});
+        if(response.data)
+          response.data.profileImage = Gravatar.imageUrl({email: !response.data.email ? "" : response.data.email, parameters: { "size": "200", "d": "mm" },secure: true});
         this.setState({user: response.data});
         if(window.localStorage.userToken)
           this.setState({auth: true});
@@ -34,21 +35,25 @@ class Profile extends Component {
   render() {
     return (
       <div className="container">
-        <div>
-          { this.state.localUser._id != this.state.user._id ? "" :
-          	<div className="col-12 right-text pd-5 pd-cl-h">
-          		<Link to={'/u/edit/'+this.state.user._id} className="button ion-ios-color-wand-outline button-primary ma-cl-v sm" type="button">update</Link>
-          	</div>
-          }
-          <div className="profile-view center-text">
-            <img src={this.state.user.profileImage} />
-            <h4 className="ma-cl-v">{this.state.user.name}</h4>
-            <p className="ma-5 ma-cl-h">{this.state.user.about}</p>
+        { !this.state.user ?
+          <p className="center-text">Whoops! User not found :-(</p>
+          :
+          <div>
+            { this.state.localUser._id != this.state.user._id ? "" :
+              <div className="col-12 right-text pd-5 pd-cl-h">
+                <Link to={'/u/edit/'+this.state.user._id} className="button ion-ios-color-wand-outline button-primary ma-cl-v sm" type="button">update</Link>
+              </div>
+            }
+            <div className="profile-view center-text">
+              <img src={this.state.user.profileImage} />
+              <h4 className="ma-cl-v">{this.state.user.name}</h4>
+              <p className="ma-5 ma-cl-h">{this.state.user.about}</p>
+            </div>
+            { !this.state.user._id ? "" :
+              <ColorList key={this.state.user._id} {...this.state.user} />
+            }
           </div>
-          { !this.state.user._id ? "" :
-            <ColorList key={this.state.user._id} {...this.state.user} />
-          }
-        </div>
+        }
       </div>
     );
   }
