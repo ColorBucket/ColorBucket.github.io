@@ -22,9 +22,9 @@ class Home extends Component {
 
 	_fetchUserColors = () => {
 		let that = this;
-		UserService.fetchColors()
+		UserService.fetchColors(UserService.local()._id)
 			.then(result => {
-				if(result.data)
+				if(result.success && result.data)
 					that.setState({colors: result.data});
 			});
 	};
@@ -58,7 +58,7 @@ class Home extends Component {
       <div className="home-page">
       	{homeMessage()}
       	<div className="color-list">
-	        {this.state.colors.length === 0 ?
+	        {!this.state.colors || this.state.colors.length === 0 ?
 	        	<p className="empty-list">save the colors that you ♥ so you'll never lose that nice color again</p>
 	        	: 
 	        	this.state.colors.map(color => {
