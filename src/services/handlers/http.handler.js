@@ -1,5 +1,5 @@
 import React from 'react';
-const ApiRoute = 'http://localhost:3010/api';
+const ApiRoute = 'https://colorbucket-api.herokuapp.com/api';
 
 function buildRequestOptions(method) {
 	let headers = {

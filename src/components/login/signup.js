@@ -13,8 +13,18 @@ class Signup extends Component {
 	_confirm = async(e) => {
 		e.preventDefault();
 
-		if(!this.state.email || !this.state.password || !this.state.name)
-			return alert('Dados inválidos!');
+		if(!this.state.name)
+			return alert('Please provide your name!');
+
+		if(!this.state.username)
+			return alert('Please provide your username!');
+
+		if(!this.state.password || this.state.password.length < 6)
+			return alert('Password must be longer than 6 characters!');
+
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  	if(!re.test(this.state.email))
+  		return alert('Invalid email!');
 
 		AuthService.signup(this.state)
 			.then((response) => {

@@ -13,12 +13,12 @@ class Login extends Component {
 		e.preventDefault();
 
 		if(!this.state.email || !this.state.password)
-			return alert('Email ou senha inválidos!');
+			return alert('Invalid Email or password!');
 
 		AuthService.login({email: this.state.email, password: this.state.password})
 			.then((response) => {
 				if(!response.success)
-					return alert('Email ou senha inválidos!');
+					return alert('Invalid Email or password!');
 
 				localStorage.userToken = response.data.token;
 				localStorage.user = JSON.stringify(response.data.user);
