@@ -1,0 +1,18 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", sans-serif;
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+
+* {
+	font-family: "Open Sans", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+
+	&:hover {
+		color: $primary-color;
+	}
+}
