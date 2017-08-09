@@ -1,5 +1,5 @@
 <h1 align="center" style="border:none;">
-<a href="https://colorbucket.github.io/">ColorBucket</a>
+<a href="http://colorbucket.co/">ColorBucket</a>
 </h1>
 
 <p align="center">
