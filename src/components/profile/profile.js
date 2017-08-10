@@ -49,7 +49,7 @@ class Profile extends Component {
               <h4 className="ma-cl-v">{this.state.user.name}</h4>
               <p className="ma-5 ma-cl-h">{this.state.user.about}</p>
             </div>
-            { !this.state.user._id ? "" :
+            {!this.state.user._id ? "" :
               <ColorList key={this.state.user._id} {...this.state.user} />
             }
           </div>

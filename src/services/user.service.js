@@ -30,7 +30,7 @@ const fetchColors = (id) => {
 	let route = '/users/';
 	route += !id ? 'colors' : id + '/colors';
 
-	if(!window.localStorage.userToken && !id)
+	if(!window.localStorage.userToken && id.indexOf('temp_') > -1)
 		return LocalHandler.fetch('colors', {user: local()._id});
 
 	return HttpHandler.request(route, 'GET', null);

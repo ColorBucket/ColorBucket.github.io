@@ -26,7 +26,6 @@ header {
 	}
 
 	.burger {
-	    position: absolute;
 	    z-index: 999;
 	    margin-top: 2px;
 	    cursor: pointer;
@@ -65,7 +64,7 @@ header {
 		justify-content: left;
 
     a {
-    	margin: 0 0 0 35px;
+    	margin: 0 0 0 15px;
 
     	img {
     		max-width: 200px;
