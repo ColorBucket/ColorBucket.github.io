@@ -64,7 +64,7 @@ class Topbar extends Component {
 								<a href="/about" className="ion-ios-help-outline">About</a>
 							</li>
 							<li onClick={this._toggleResponsive}>
-								<a href="https://github.com/ColorBucket/chrome-extension" target="_blank" className="ion-social-chrome">Chrome Extension</a>
+								<a href="https://chrome.google.com/webstore/detail/colorbucket/giogidmnhjmlgoglafkjioigioohcckj?hl=en-US&gl=BR" target="_blank" className="ion-social-chrome">Chrome Extension</a>
 							</li>
 							<li onClick={this._toggleResponsive}>
 								<a href="https://github.com/ColorBucket/" target="_blank" className="ion-social-github">Github</a>

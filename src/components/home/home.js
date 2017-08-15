@@ -49,7 +49,7 @@ class Home extends Component {
 
   		if(!localStorage.chromealert || localStorage.chromealert != "2")
   			return (<p className="home-message">
-  				Hey! Have you tried our <i>awesome</i> <a href="https://github.com/Colorbucket/chrome-extension" target="_blank">chrome extension</a>? 
+  				Hey! Have you tried our <i>awesome</i> <a href="https://chrome.google.com/webstore/detail/colorbucket/giogidmnhjmlgoglafkjioigioohcckj?hl=en-US&gl=BR" target="_blank">chrome extension</a>? 
   				<span onClick={(e) => closeAction(e, true)}>close</span>
 				</p>);
   	};
