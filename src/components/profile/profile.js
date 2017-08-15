@@ -34,7 +34,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-lg">
         { !this.state.user ?
           <p className="center-text">Whoops! User not found :-(</p>
           :
