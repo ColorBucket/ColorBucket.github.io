@@ -34,31 +34,28 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div className="ma-40 ma-cl-h">
-				<div className="col-12 center-text login-header">
-					<Link to="/" className="bucket-logo"><img src="./images/bucket.png" /></Link>
+			<div className="row ma-40 ma-cl-h">
+				<form className="col-6 col-offset-3 row">
+					<div className="center-text login-header">
+						<Link to="/" className="bucket-logo"><img src="/images/logo.png" alt="Colorbucket logo" /></Link>
+						<h3>save the colors that you ♥</h3>
+					</div>
+
 					<h3>Login</h3>
-				</div>
-				<div className="col-12">
-					<form>
-						<div className="row">
-							<div className="col-4 col-offset-4">
-								<label>Your email</label>
-								<input className="full-width" onChange={(e) => this._handleChange(e)} type="email" placeholder="Email" id="email" />
-							</div>
-							<div className="col-4 col-offset-4">
-								<label>Password</label>
-								<input className="full-width" onChange={(e) => this._handleChange(e)} type="password" placeholder="Password" id="password" />
-							</div>
-							<div className="col-6 col-offset-3 center-text">
-						      	<input type="submit" className="button-primary" onClick={(e) => this._confirm(e)} value="Login"/>
-							</div>
+
+					<label>Your email</label>
+					<input className="full-width" onChange={(e) => this._handleChange(e)} type="email" placeholder="Email" id="email" />
+
+					<label>Password</label>
+					<input className="full-width" onChange={(e) => this._handleChange(e)} type="password" placeholder="Password" id="password" />
+						
+					<div className="center-text">
+		      	<input type="submit" className="button-primary" onClick={(e) => this._confirm(e)} value="Login"/>
+						<div className="login-hit">
+							Don't have an account? <Link to="/login/signup">Signup</Link>
 						</div>
-					</form>
-				</div>
-				<div className="col-12 center-text login-hit">
-					Don't have an account? <Link to="/login/signup">Signup</Link>
-				</div>
+					</div>
+				</form>
 			</div>
 		);
 	}

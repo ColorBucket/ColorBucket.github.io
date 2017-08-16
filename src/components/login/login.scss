@@ -1,18 +1,15 @@
 .login-header {
-	> .bucket-logo {
-		background: #fff;
-		display: inline-block;
-    border: 1px solid #c3c3c3;
-    padding: 13px 18px;
-    border-radius: 50%;
 
+	.bucket-logo {
 		img {
-			max-width: 60px;
-	    margin: 5px 0;
+			width: 80%;
+			max-width: 250px;
 		}
 	}
 
 	h3 {
-		letter-spacing: 0px;
+		margin-top: 10px;
+		font-size: 18px;
+		letter-spacing: 0;
 	}
 }
