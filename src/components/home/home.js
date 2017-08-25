@@ -10,7 +10,8 @@ import './home.scss';
 class Home extends Component {
 
 	state = {
-		colors: []
+		colors: [],
+		filter: ''
 	};
 
 	componentDidMount() {
@@ -18,6 +19,19 @@ class Home extends Component {
 		
 		if(window.localStorage.userToken)
 			SyncService.syncColors(this._fetchUserColors);
+	}
+
+	_filterColors = () => {
+		if(!this.state.filter || !this.state.colors || this.state.colors.length == 0)
+			return this.state.colors;
+
+		let filteredColors = [];
+		this.state.colors.map(color => {
+			if(color.name.toLowerCase().indexOf(this.state.filter.toLowerCase()) > -1)
+				filteredColors.push(color);
+		});
+
+		return filteredColors;
 	}
 
 	_fetchUserColors = () => {
@@ -28,6 +42,12 @@ class Home extends Component {
 					that.setState({colors: result.data});
 			});
 	};
+
+	_handleChange = (e) => {
+		let updtObj = {};
+		updtObj[e.target.id] = e.target.value;
+		this.setState(updtObj);
+	}
 
   render() {
 
@@ -61,9 +81,14 @@ class Home extends Component {
 	        {!this.state.colors || this.state.colors.length === 0 ?
 	        	<p className="empty-list">save the colors that you ♥ so you'll never lose that nice color again</p>
 	        	: 
-	        	this.state.colors.map(color => {
-        			return <ColorTile key={color._id} deleteCallback={this._fetchUserColors}  {...color} />
-	        	})
+	        	<div>
+	        		<div className="col-12 center-text">
+	        			<input type="text" className="sm-input" placeholder="filter by color tag" id="filter" onChange={(e) => this._handleChange(e)} />
+	        		</div>
+		        	{this._filterColors().map(color => {
+	        			return <ColorTile key={color._id} deleteCallback={this._fetchUserColors}  {...color} />
+		        	})}
+	        	</div>
 	        }
         </div>
 

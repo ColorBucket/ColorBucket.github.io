@@ -65,7 +65,7 @@ class ColorAdd extends Component {
 			<div className="color-add-input row">
 				<form>
 					<div className="col-12 row">
-						<input type="text" className="full-width center-text" id="name" name="name" placeholder="name the color" onChange={(e) => this._handleChange(e)} value={this.state.name} />
+						<input type="text" className="full-width center-text" id="name" name="name" placeholder="tag the color" onChange={(e) => this._handleChange(e)} value={this.state.name} />
 					</div>
 					<div className="col-12 row">
 						<input type="text" className={this.state.validHex ? "full-width center-text ma-cl-b" : "full-width center-text ma-cl-b error-input"} id="hex" name="hex" placeholder="type your hex #000000" onChange={(e) => this._handleChange(e)} value={this.state.hex} />
