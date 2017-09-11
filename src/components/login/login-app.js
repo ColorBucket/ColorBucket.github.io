@@ -5,7 +5,7 @@ import './login.scss';
 class LoginApp extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="row login-app">
         {this.props.children}
       </div>
     );

@@ -1,15 +1,35 @@
-.login-header {
-
-	.bucket-logo {
-		img {
-			width: 80%;
-			max-width: 250px;
+.login-app {
+	form {
+		min-height: 100vh;
+		
+		> div {
+			width: 100%;
 		}
 	}
 
-	h3 {
-		margin-top: 10px;
-		font-size: 18px;
-		letter-spacing: 0;
+	.login-header {
+		min-height: 100vh;
+		background: #fff;
+		
+		> div {
+			width: 100%;
+		}
+
+		.bucket-logo {
+			img {
+				width: 80%;
+				max-width: 250px;
+			}
+		}
+
+		h3 {
+			margin-top: 10px;
+			font-size: 18px;
+			letter-spacing: 0;
+		}
+
+		@media (max-width: 850px) {
+			min-height: 150px;
+		}
 	}
 }

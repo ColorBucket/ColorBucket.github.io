@@ -34,25 +34,28 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div className="row ma-40 ma-cl-h">
-				<form className="col-6 col-offset-3 row">
-					<div className="center-text login-header">
+			<div className="row">
+				<div className="center-text login-header col-6 flex flex-center">
+					<div>
 						<Link to="/" className="bucket-logo"><img src="/images/logo.png" alt="Colorbucket logo" /></Link>
 						<h3>save the colors that you ♥</h3>
 					</div>
+				</div>
+				<form className="col-4 col-offset-1 row pd-10 pd-cl-v flex flex-center">
+					<div>
+						<h3>Login</h3>
 
-					<h3>Login</h3>
+						<label>Your email</label>
+						<input className="full-width" onChange={(e) => this._handleChange(e)} type="email" placeholder="Email" id="email" />
 
-					<label>Your email</label>
-					<input className="full-width" onChange={(e) => this._handleChange(e)} type="email" placeholder="Email" id="email" />
-
-					<label>Password</label>
-					<input className="full-width" onChange={(e) => this._handleChange(e)} type="password" placeholder="Password" id="password" />
-						
-					<div className="center-text">
-		      	<input type="submit" className="button-primary" onClick={(e) => this._confirm(e)} value="Login"/>
-						<div className="login-hit">
-							Don't have an account? <Link to="/login/signup">Signup</Link>
+						<label>Password</label>
+						<input className="full-width" onChange={(e) => this._handleChange(e)} type="password" placeholder="Password" id="password" />
+							
+						<div className="center-text">
+							<input type="submit" className="button-primary" onClick={(e) => this._confirm(e)} value="Login"/>
+							<div className="login-hit">
+								Don't have an account? <Link to="/login/signup">Signup</Link>
+							</div>
 						</div>
 					</div>
 				</form>
