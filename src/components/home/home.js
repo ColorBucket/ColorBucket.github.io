@@ -27,7 +27,7 @@ class Home extends Component {
 
 		let filteredColors = [];
 		this.state.colors.map(color => {
-			if(color.name.toLowerCase().indexOf(this.state.filter.toLowerCase()) > -1)
+			if(color.name && color.name.toLowerCase().indexOf(this.state.filter.toLowerCase()) > -1)
 				filteredColors.push(color);
 		});
 
