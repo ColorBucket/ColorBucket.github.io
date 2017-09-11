@@ -28,14 +28,8 @@ class Signup extends Component {
 
 		AuthService.signup(this.state)
 			.then((response) => {
-				if(!response.success && response.data.indexOf('duplicate key error') > -1 && response.data.indexOf('username') > -1)
-					return alert('Ops, username already taken');
-
-				if(!response.success && response.data.indexOf('duplicate key error') > -1 && response.data.indexOf('email') > -1)
-					return alert('Ops, email already taken');
-
 				if(!response.success)
-					return alert(response.data.message);
+					return alert(response.message);
 
 				localStorage.userToken = response.data.token;
 				localStorage.user = JSON.stringify(response.data.user);
