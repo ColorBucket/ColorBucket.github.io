@@ -38,6 +38,21 @@ class Signup extends Component {
 	};
 
 	_handleChange = (e) => {
+		if(e.target.id === 'username')
+			return this._handleUsername(e);
+
+		let updtObj = {};
+		updtObj[e.target.id] = e.target.value;
+		this.setState(updtObj);
+	}
+
+	_handleUsername = (e) => {
+		var regex = /^[a-zA-Z\d\-_.,\s]+$/;
+		
+		if(!regex.test(e.target.value))
+			e.target.value = e.target.value.substr(0, e.target.value.length -1);
+
+		e.target.value = e.target.value.replace(' ', '-');
 		let updtObj = {};
 		updtObj[e.target.id] = e.target.value;
 		this.setState(updtObj);
