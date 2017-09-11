@@ -1,7 +1,7 @@
 .login-app {
 	form {
 		min-height: 100vh;
-		
+
 		> div {
 			width: 100%;
 		}
@@ -27,8 +27,11 @@
 			font-size: 18px;
 			letter-spacing: 0;
 		}
+	}
 
-		@media (max-width: 850px) {
+	@media (max-width: 850px) {
+		.login-header, 
+		form {
 			min-height: 150px;
 		}
 	}
