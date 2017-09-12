@@ -16,7 +16,7 @@ class Discover extends Component {
 
 	_fetchDiscoverColors = () => {
 		let that = this;
-		ColorService.discover(4)
+		ColorService.discover(16)
 			.then(result => {
 				if(result.success && result.data){
           that.setState({colors: result.data});
