@@ -27,4 +27,8 @@ const fetch = (id) => {
 	return HttpHandler.request('/colors' + id, 'GET', null);
 };
 
-export default { save, remove, fetch };
+const discover = (take) => {
+	return HttpHandler.request('/colors/discover?take='+take, 'GET', null);
+};
+
+export default { save, remove, fetch, discover };

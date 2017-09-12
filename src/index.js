@@ -10,6 +10,7 @@ import Home from './components/home/home';
 import About from './components/about/about';
 import Profile from './components/profile/profile';
 import ProfileEdit from './components/profile/edit';
+import Discover from './components/discover/discover';
 //
 import Login from './components/login/login';
 import Signup from './components/login/signup';
@@ -38,6 +39,7 @@ ReactDOM.render(
 				<Route path="u/:user_id" component={Profile}/>
 				<Route path="u/edit/:user_id" component={ProfileEdit}/>
 				<Route path="about" component={About}/>
+				<Route path="discover" component={Discover}/>
 			</Route>
 		</Route>
 	</Router>

@@ -55,6 +55,9 @@ class Topbar extends Component {
 							<li onClick={this._toggleResponsive}>
 								<Link to="/" className="ion-paintbucket">Your Colors</Link>
 							</li>
+							<li onClick={this._toggleResponsive}>
+								<Link to="/discover" className="ion-android-compass">Discover Colors</Link>
+							</li>
 							{ !this.state.auth ? "" :
 								<li onClick={this._toggleResponsive}>
 									<Link to={"/u/"+this.state.user.username} className="ion-ios-person">Your Profile</Link>

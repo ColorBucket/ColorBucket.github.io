@@ -10,12 +10,25 @@ class ColorList extends Component {
 	};
 
 	componentDidMount() {
+		this._componentInitialize(this.props);
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this._componentInitialize(nextProps);
+	}
+
+	_componentInitialize(propsobj) {
 		let that = this;
-		UserService.fetchColors(this.props._id)
-			.then(result => {
-				if(result.data)
-					that.setState({colors: result.data});
-			});
+		
+		if(propsobj.colors)
+			this.setState({colors: propsobj.colors});
+
+		if(propsobj._id)
+			UserService.fetchColors(propsobj._id)
+				.then(result => {
+					if(result.data)
+						that.setState({colors: result.data});
+				});
 	}
 
 	_filterColors = () => {
@@ -41,10 +54,10 @@ class ColorList extends Component {
 		return (
 			<div className="color-list">
 				{this.state.colors.length === 0 ?
-        	<p className="empty-list center-text">this user has no colors :-(</p>
+        	<p className="empty-list center-text">we found no colors :-(</p>
         	: 
         	<div>
-        		<div className="col-12 center-text">
+        		<div style={{'display': this.props.hidefilter ? 'none' : 'inherit'}} className="col-12 center-text">
         			<input type="text" className="sm-input" placeholder="filter by color tag" id="filter" onChange={(e) => this._handleChange(e)} />
         		</div>
 	        	{this._filterColors().map(color => {

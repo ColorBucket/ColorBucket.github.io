@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 //
 import ColorService from '../../../services/color.service';
 import './color-tile.scss';
@@ -20,8 +21,12 @@ class ColorTile extends Component {
 						<p className="ion-ios-trash" onClick={() => this._deleteColor()}></p>
 						: ""
 					}
-					<small>{ !this.props.name ? '#'+this.props.hex : this.props.name + ' (#' + this.props.hex + ')' }</small>
 				</div>
+				<small>{ !this.props.name ? '#'+this.props.hex : this.props.name + ' (#' + this.props.hex + ')' }</small>
+				{this.props.readonly && typeof(this.props.user) === 'object' ?
+					<small className="user-link">by <Link to={'/u/'+this.props.user.username}>@{this.props.user.username}</Link></small>
+				: ''
+				}
 			</div>
 		);
 	}
