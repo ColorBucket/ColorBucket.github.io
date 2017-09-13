@@ -44,14 +44,16 @@ class Profile extends Component {
                 <Link to={'/u/edit/'+this.state.user._id} className="button ion-ios-color-wand-outline button-primary ma-cl-v sm" type="button">update</Link>
               </div>
             }
-            <div className="profile-view center-text">
+            <div className="profile-view center-text col-3 ma-20 ma-cl-h">
               <img src={this.state.user.profileImage} />
               <h4 className="ma-cl-v">{this.state.user.name}</h4>
               <p className="ma-5 ma-cl-h">{this.state.user.about}</p>
             </div>
-            {!this.state.user._id ? "" :
-              <ColorList key={this.state.user._id} {...this.state.user} />
-            }
+            <div className="col-9 three-tiles-list">
+              {!this.state.user._id ? "" :
+                <ColorList key={this.state.user._id} {...this.state.user} />
+              }
+            </div>
           </div>
         }
       </div>
