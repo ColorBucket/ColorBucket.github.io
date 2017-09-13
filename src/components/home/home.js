@@ -84,6 +84,7 @@ class Home extends Component {
 	        	<div>
 	        		<div className="col-12 center-text">
 	        			<input type="text" className="sm-input" placeholder="filter by color tag" id="filter" onChange={(e) => this._handleChange(e)} />
+								<Link to="/discover" className="button sm ion-android-compass ma-10 ma-cl-v ma-cl-r">Discover Colors</Link>
 	        		</div>
 		        	{this._filterColors().map(color => {
 	        			return <ColorTile key={color._id} deleteCallback={this._fetchUserColors}  {...color} />
