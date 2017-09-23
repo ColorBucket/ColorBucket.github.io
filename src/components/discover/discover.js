@@ -19,7 +19,8 @@ class Discover extends Component {
 		ColorService.discover(16)
 			.then(result => {
 				if(result.success && result.data){
-          that.setState({colors: result.data});
+					that.setState({colors: result.data});
+					window.scrollTo(0,0);
         }
 			});
 	};
