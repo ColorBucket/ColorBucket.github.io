@@ -32,8 +32,10 @@ class Discover extends Component {
 	        	<p className="empty-list">Fetching some inspiration...</p>
 	        	: 
 	        	<div>
-              <h5 className="center-text">Discover your new favorite color</h5>
-              <ColorList colors={this.state.colors} hidefilter={true} />
+              <h5 className="center-text" data-aos="fade-down">Discover your new favorite color</h5>
+							<div data-aos="fade-up">
+              	<ColorList colors={this.state.colors} hidefilter={true} />
+							</div>
               <div className="col-12 row center-text ma-60 ma-cl-h">
                 <button className="ion-refresh" onClick={(e) => this._fetchDiscoverColors()}>load more</button>
               </div>
