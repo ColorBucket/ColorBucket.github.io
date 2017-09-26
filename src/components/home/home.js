@@ -82,11 +82,11 @@ class Home extends Component {
 	        	<p className="empty-list">save the colors that you ♥ so you'll never lose that nice color again</p>
 	        	: 
 	        	<div>
-	        		<div className="col-12 center-text" data-aos="fade-down">
+	        		<div className="col-12 row center-text" data-aos="fade-down">
 	        			<input type="text" className="sm-input" placeholder="filter by color tag" id="filter" onChange={(e) => this._handleChange(e)} />
 								<Link to="/discover" className="button sm ion-android-compass ma-10 ma-cl-v ma-cl-r">Discover Colors</Link>
 	        		</div>
-							<div data-aos="fade-up">
+							<div className="row" data-aos="fade-up">
 								{this._filterColors().map(color => {
 									return <ColorTile key={color._id} deleteCallback={this._fetchUserColors}  {...color} />
 								})}
