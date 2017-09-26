@@ -57,10 +57,6 @@ class ProfileEdit extends Component {
             <textarea name="about" id="about" className="full-width" onChange={(e) => this._handleChange(e)}>
             </textarea>
           </div>
-          <div className="col-12 row">
-            <label>Update Password</label>
-            <input type="password" name="password" id="password" className="full-width" onChange={(e) => this._handleChange(e)} value={this.state.user.password} />
-          </div>
           <div className="col-12 center-text pd-5 pd-cl-h">
             <button onClick={(e) => this._updateUser(e)} className="ion-checkmark-round button-primary ma-cl-v sm" type="button">save</button>
           </div>
