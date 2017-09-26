@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { hashHistory, Link } from 'react-router';
 import AuthService from '../../services/auth.service';
+import Notification from '../../services/notification.service';
 
 class Signup extends Component {
 	state = {
@@ -14,22 +15,22 @@ class Signup extends Component {
 		e.preventDefault();
 
 		if(!this.state.name)
-			return alert('Please provide your name!');
+			return Notification.error('Please provide your name!');
 
 		if(!this.state.username)
-			return alert('Please provide your username!');
+			return Notification.error('Please provide your username!');
 
 		if(!this.state.password || this.state.password.length < 6)
-			return alert('Password must be longer than 6 characters!');
+			return Notification.error('Password must be longer than 6 characters!');
 
 		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   	if(!re.test(this.state.email))
-  		return alert('Invalid email!');
+  		return Notification.error('Invalid email!');
 
 		AuthService.signup(this.state)
 			.then((response) => {
 				if(!response.success)
-					return alert(response.message);
+					return Notification.error(response.message);
 
 				localStorage.userToken = response.data.token;
 				localStorage.user = JSON.stringify(response.data.user);

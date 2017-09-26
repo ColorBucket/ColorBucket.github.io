@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { hashHistory, Link } from 'react-router';
 import AuthService from '../../services/auth.service';
+import Notification from '../../services/notification.service';
 
 class Login extends Component {
 	state = {
@@ -13,12 +14,12 @@ class Login extends Component {
 		e.preventDefault();
 
 		if(!this.state.email || !this.state.password)
-			return alert('Invalid Email or password!');
+			return Notification.error('Invalid Email or password!');
 
 		AuthService.login({email: this.state.email, password: this.state.password})
 			.then((response) => {
 				if(!response.success)
-					return alert('Invalid Email or password!');
+					return Notification.error('Invalid Email or password!');
 
 				localStorage.userToken = response.data.token;
 				localStorage.user = JSON.stringify(response.data.user);
