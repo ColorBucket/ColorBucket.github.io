@@ -57,6 +57,9 @@ class Login extends Component {
 							<div className="login-hit">
 								Don't have an account? <Link to="/login/signup">Signup</Link>
 							</div>
+							<div className="login-hit">
+								<i>Forgot your password? <Link to="/login/recovery">Reset Password</Link></i>
+							</div>
 						</div>
 					</div>
 				</form>

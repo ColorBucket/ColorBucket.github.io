@@ -14,6 +14,8 @@ import Discover from './components/discover/discover';
 //
 import Login from './components/login/login';
 import Signup from './components/login/signup';
+import Recovery from './components/login/recovery';
+import Reset from './components/login/reset';
 import LoginApp from './components/login/login-app';
 //
 import 'spookycss/css/spooky.min.css';
@@ -33,6 +35,8 @@ ReactDOM.render(
 			<Route path="/login" component={LoginApp}>
 				<IndexRoute component={Login}/>
 				<Route path="signup" component={Signup}/>
+				<Route path="recovery" component={Recovery}/>
+				<Route path="recovery/:recovery_code" component={Reset}/>
 			</Route>
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}/>
